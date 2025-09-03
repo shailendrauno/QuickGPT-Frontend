@@ -5,7 +5,7 @@ import moment from 'moment'
 
 const SideBar = () => {
 
-    const {chats, setSelectedChat, theme, setTheme, user } = useAppContext()
+    const {chats, setSelectedChat, theme, setTheme, user, navigate } = useAppContext()
     const [search, setSearch] = useState('')
 
 
@@ -50,7 +50,15 @@ const SideBar = () => {
                 }
             </div>
 
+            {/* Comunity Images */}
 
+            <div onClick={() => {navigate('/community')}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300
+                dark:border-white/15 rounded-md cursor-pointer hover:scale-103 transition-all'>
+                <img src={assets.gallery_icon} className='w-4.5 not-dark:invert' alt="" />
+                <div className='flex flex-col text-sm'>
+                    <p>Community Images</p>
+                </div>
+            </div>
 
 
         </div>
